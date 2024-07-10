@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let book = {
+            nameOfBook: "alcimest",
+            available: true,
+            borrowBook: function(){
+                if(this.available) {
+                    this.available = false;
+                    console.log("You have borrowd the book: "+ this.nameOfBook);
+                }else{
+                    console.log("this book is not available. ");
+                }
+            },
+            returnBook: function(){
+                this.available = true;
+                console.log(" you have returned the book: " + this.nameOfBook);
+            }
+        };
+
+    
+        console.log(book.nameOfBook);
+
+        book.rating = 5;
+
+        console.log(book.rating);
+
+        book.borrowBook();
+        book.borrowBook();
+        book.returnBook();
+        book.borrowBook();
+
+        //the loop for showing all the object properties
+        for(let key in book) {
+            console.log(key + ": " + book[key]);
+        }
+    </script>
+
+</body>
+</html>
